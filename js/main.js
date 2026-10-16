@@ -1,59 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const htmlRoot = document.documentElement;
-  
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
-  
-  // Lekérjük a mentett témát a böngészőből, alapértelmezett a 'dark'
-  let currentTheme = localStorage.getItem('sh_cv_theme') || 'dark';
-  htmlRoot.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(currentTheme);
+  const langToggle = document.getElementById('lang-toggle');
+  const langText = document.getElementById('lang-text');
+  const htmlRoot = document.documentElement;
 
-  // Gombnyomásra váltunk és mentünk
-  if(themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        htmlRoot.setAttribute('data-theme', currentTheme);
-        localStorage.setItem('sh_cv_theme', currentTheme);
-        updateThemeIcon(currentTheme);
-      });
-  }
+  // 1. Téma kezelése (Mentés LocalStorage-ba)
+  const savedTheme = localStorage.getItem('sh_theme') || 'dark';
+  htmlRoot.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
 
-  // Ikon cseréje (Nap / Hold)
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlRoot.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    htmlRoot.setAttribute('data-theme', newTheme);
+    localStorage.setItem('sh_theme', newTheme);
+    updateThemeIcon(newTheme);
+  });
+
   function updateThemeIcon(theme) {
-    if(themeIcon) {
-      themeIcon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    if (theme === 'dark') {
+      themeIcon.className = 'fa-solid fa-sun';
+    } else {
+      themeIcon.className = 'fa-solid fa-moon';
     }
   }
 
-  const langToggle = document.getElementById('lang-toggle');
-  const langText = document.getElementById('lang-text');
-  
-  // Lekérjük a mentett nyelvet, alapértelmezett a 'hu'
-  let currentLang = localStorage.getItem('sh_cv_lang') || 'hu';
-  applyLang(currentLang);
+  // 2. Kétnyelvű mód (Magyar <-> Angol)
+  let currentLang = localStorage.getItem('sh_lang') || 'hu';
+  applyLanguage(currentLang);
 
-  // Gombnyomásra nyelvet cserélünk és mentünk
-  if(langToggle) {
-      langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'hu' ? 'en' : 'hu';
-        localStorage.setItem('sh_cv_lang', currentLang);
-        applyLang(currentLang);
-      });
-  }
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'hu' ? 'en' : 'hu';
+    localStorage.setItem('sh_lang', currentLang);
+    applyLanguage(currentLang);
+  });
 
-  // Lecseréljük a szövegeket a kiválasztott nyelvre
-  function applyLang(lang) {
-      if(langText) {
-          langText.textContent = lang === 'hu' ? 'EN' : 'HU';
-      }
-    // Megkeressük az összes elemet, aminek van 'data-hu' attribútuma
-    const elements = document.querySelectorAll('[data-hu]');
-    elements.forEach(el => {
-      const translatedText = el.getAttribute(`data-${lang}`);
-      if (translatedText) {
-        // Az innerHTML lehetővé teszi, hogy a <strong> és más HTML tagek is működjenek a szövegben
-        el.innerHTML = translatedText;
+  function applyLanguage(lang) {
+    langText.textContent = lang === 'hu' ? 'EN' : 'HU';
+    
+    // Minden data-hu és data-en attribútummal ellátott elem cseréje
+    document.querySelectorAll('[data-hu]').forEach(el => {
+      const translated = el.getAttribute(`data-${lang}`);
+      if (translated) {
+        el.innerHTML = translated;
       }
     });
   }
