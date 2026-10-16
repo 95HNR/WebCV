@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="hu" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sándor Hunor - Webes Önéletrajz</title>
-  <link rel="stylesheet" href="css/sytles.css">
+  <title>Sándor Hunor - Curriculum Vitae</title>
+  
+  <!-- Eredeti CSS fájlok a ZIP-ből -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/text.css" />
+  <link rel="stylesheet" href="css/960_24_col.css" />
+  <link rel="stylesheet" href="css/sytles.css" />
+  
+  <!-- Modern ikonok és betűtípus a dizájnhoz -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- FontAwesome ikonok modern megjelenítéshez -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -17,153 +23,109 @@
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
-  <div class="container">
-    <!-- Fejléc / Vezérlők -->
-    <header class="glass-card header-controls">
-      <div class="logo">SH<span>.dev</span></div>
-      <div class="controls">
-        <button id="lang-toggle" class="glass-btn" title="Nyelvváltás / Change Language">
-          <i class="fa-solid fa-globe"></i> <span id="lang-text">EN</span>
-        </button>
-        <button id="theme-toggle" class="glass-btn" title="Téma váltása">
-          <i id="theme-icon" class="fa-solid fa-sun"></i>
-        </button>
-      </div>
-    </header>
+  <!-- Vezérlő gombok: Nyelv és Téma -->
+  <div class="cv-controls">
+    <button id="lang-toggle" class="glass-btn"><i class="fa-solid fa-globe"></i> EN / HU</button>
+    <button id="theme-toggle" class="glass-btn"><i id="theme-icon" class="fa-solid fa-sun"></i></button>
+  </div>
 
-    <!-- Fő profil kártya -->
-    <section class="glass-card hero-section">
-      <div class="profile-wrapper">
-        <!-- Itt használhatod a képedet (pl. img/profile.jpg vagy img/biroka.png helyett) -->
-        <div class="avatar-ring">
-          <img src="img/resume.png" alt="Sándor Hunor" class="profile-img" onerror="this.src='https://via.placeholder.com/160?text=SH'">
-        </div>
-        <div class="hero-info">
-          <h1 class="name">Sándor Hunor</h1>
-          <h2 class="title" data-hu="Informatika szakos egyetemi hallgató" data-en="IT / Computer Science Student">
-            Informatika szakos egyetemi hallgató
-          </h2>
-          <p class="about-text" 
-             data-hu="21 éves technológia- és programozás-rajongó vagyok, erős érdeklődéssel a szoftverfejlesztés, dizájn, fotózás és gaming iránt. Kreatív, részletorientált szemlélettel szeretem a komplex problémákat elegáns kóddal és modern vizuális megoldásokkal megoldani."
-             data-en="21-year-old tech enthusiast with a strong passion for programming, design, photography, and gaming. A creative and detail-oriented individual who thrives on solving problems and bringing ideas to life through clean code.">
-            21 éves technológia- és programozás-rajongó vagyok, erős érdeklődéssel a szoftverfejlesztés, dizájn, fotózás és gaming iránt. Kreatív, részletorientált szemlélettel szeretem a komplex problémákat elegáns kóddal és modern vizuális megoldásokkal megoldani.
-          </p>
-          <div class="contact-chips">
-            <a href="mailto:sandorhunor842@gmail.com" class="chip"><i class="fa-solid fa-envelope"></i> sandorhunor842@gmail.com</a>
-            <a href="tel:+40753342672" class="chip"><i class="fa-solid fa-phone"></i> (+40) 0753 342 672</a>
-            <span class="chip"><i class="fa-solid fa-location-dot"></i> Târgu Mureș, Romania</span>
-            <a href="https://github.com/95HNR" target="_blank" class="chip"><i class="fa-brands fa-github"></i> github.com/95HNR</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Rácsos elrendezés: Készségek & Tanulmányok -->
-    <div class="grid-layout">
-      <!-- Tanulmányok -->
-      <section class="glass-card section-card">
-        <h3 class="section-title"><i class="fa-solid fa-graduation-cap"></i> <span data-hu="Tanulmányok" data-en="Education">Tanulmányok</span></h3>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-date">2024 - <span data-hu="Jelenleg" data-en="Present">Jelenleg</span></span>
-            <h4 data-hu="Informatika (Magyar nyelven)" data-en="Informatics (in Hungarian)">Informatika (Magyar nyelven)</h4>
-            <p class="timeline-sub">George Emil Palade University of Medicine, Pharmacy, Science and Technology | Târgu Mureș</p>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2020 - 2024</span>
-            <h4 data-hu="Társadalomtudományok (Intenzív német)" data-en="Social Sciences (Intensive German)">Társadalomtudományok (Intenzív német)</h4>
-            <p class="timeline-sub">Bolyai Farkas Elméleti Líceum | Târgu Mureș</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Készségek & Nyelvek -->
-      <section class="glass-card section-card">
-        <h3 class="section-title"><i class="fa-solid fa-code"></i> <span data-hu="Készségek & Nyelvek" data-en="Skills & Languages">Készségek & Nyelvek</span></h3>
-        
-        <h4 class="sub-heading" data-hu="Programozás & Technológiák" data-en="Tech Stack">Programozás & Technológiák</h4>
-        <div class="tags-container">
-          <span class="tag">Java</span>
-          <span class="tag">Flutter / Dart</span>
-          <span class="tag">C / C++</span>
-          <span class="tag">C#</span>
-          <span class="tag">HTML / CSS / JS</span>
-          <span class="tag">Android Studio</span>
-          <span class="tag">SQLite / Room DB</span>
-          <span class="tag">PC Építés</span>
-          <span class="tag">Microsoft Office</span>
-        </div>
-
-        <h4 class="sub-heading" data-hu="Nyelvismeret" data-en="Languages" style="margin-top: 1.5rem;">Nyelvismeret</h4>
-        <div class="lang-bars">
-          <div class="lang-bar-item">
-            <div class="lang-label"><span data-hu="Magyar" data-en="Hungarian">Magyar</span> <span>Anyanyelv</span></div>
-            <div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div>
-          </div>
-          <div class="lang-bar-item">
-            <div class="lang-label"><span data-hu="Román" data-en="Romanian">Román</span> <span>Felsőfok</span></div>
-            <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
-          </div>
-          <div class="lang-bar-item">
-            <div class="lang-label"><span data-hu="Angol" data-en="English">Angol</span> <span>Közép/Felsőfok</span></div>
-            <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
-          </div>
-          <div class="lang-bar-item">
-            <div class="lang-label"><span data-hu="Német" data-en="German">Német</span> <span>Intenzív B2</span></div>
-            <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
-          </div>
-        </div>
-      </section>
+  <div class="container_24">
+    <!-- Fejléc (Profilkép és Kapcsolat) -->
+    <div class="grid_24 glass-panel header-section" style="margin-top: 40px; padding: 30px; text-align: center;">
+      <!-- Itt hivatkozunk a ZIP-ben lévő képre -->
+      <img src="img/resume.png" alt="Sándor Hunor" style="border-radius: 50%; width: 160px; height: 160px; object-fit: cover; margin-bottom: 20px; border: 3px solid rgba(255,255,255,0.2);">
+      
+      <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.5em; font-weight: 700; margin-bottom: 5px;">Sándor Hunor</h1>
+      <h2 style="color: #38bdf8; font-family: 'Poppins', sans-serif; margin-bottom: 20px;" data-hu="Informatika szakos egyetemi hallgató" data-en="IT / Computer Science student">Informatika szakos egyetemi hallgató</h2>
+      
+      <p style="font-family: 'Poppins', sans-serif; line-height: 2;">
+        <a href="mailto:sandorhunor842@gmail.com" style="color: inherit; text-decoration: none; padding: 0 10px;"><i class="fa-solid fa-envelope"></i> sandorhunor842@gmail.com</a> |
+        <a href="tel:+40753342672" style="color: inherit; text-decoration: none; padding: 0 10px;"><i class="fa-solid fa-phone"></i> (+40) 0753342672</a> <br>
+        <span style="padding: 0 10px;"><i class="fa-solid fa-location-dot"></i> Târgu Mureș, Romania</span> |
+        <a href="https://github.com/95HNR" target="_blank" style="color: inherit; text-decoration: none; padding: 0 10px;"><i class="fa-brands fa-github"></i> github.com/95HNR</a>
+      </p>
     </div>
+    <div class="clear"></div>
 
-    <!-- Kiemelt Projekt: DriveCheck -->
-    <section class="glass-card section-card">
-      <h3 class="section-title"><i class="fa-solid fa-cubes"></i> <span data-hu="Kiemelt Projekt" data-en="Featured Project">Kiemelt Projekt</span></h3>
-      <div class="project-box">
-        <div class="project-header">
-          <div>
-            <h4>DriveCheck</h4>
-            <span class="project-badge" data-hu="Kliens-Szerver Flottamenedzsment" data-en="Client-Server Fleet Management">Kliens-Szerver Flottamenedzsment</span>
-          </div>
-        </div>
-        <p class="project-desc"
-           data-hu="Szoftveralapú fuvar- és járműpark-kezelő rendszer kkv-k számára. Két önálló natív Android alkalmazásból áll: Kliens (sofőr) és Szerver (adminisztrátor)."
-           data-en="A software-based fleet and trip management solution for SMEs. It consists of two native Android applications: Client (driver) and Server (admin).">
-          Szoftveralapú fuvar- és járműpark-kezelő rendszer kkv-k számára. Két önálló natív Android alkalmazásból áll: Kliens (sofőr) és Szerver (adminisztrátor).
+    <!-- Bal Oszlop: Rólam, Készségek, Nyelvek -->
+    <div class="grid_8">
+      
+      <!-- Rólam -->
+      <div class="glass-panel" style="padding: 25px; margin-top: 20px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px;" data-hu="RÓLAM" data-en="ABOUT ME">RÓLAM</h3>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 0.95em; line-height: 1.6;" data-hu="21 éves technológia- és programozás-rajongó vagyok, erős érdeklődéssel a szoftverfejlesztés, dizájn, fotózás és gaming iránt. Kreatív, részletorientált szemlélettel szeretem a komplex problémákat elegáns kóddal és modern vizuális megoldásokkal megoldani." data-en="21-year-old tech enthusiast with a strong passion for programming, design, photography, and gaming. A creative and detail-oriented individual who thrives on solving problems and bringing ideas to life through clean code.">
+          21 éves technológia- és programozás-rajongó vagyok, erős érdeklődéssel a szoftverfejlesztés, dizájn, fotózás és gaming iránt. Kreatív, részletorientált szemlélettel szeretem a komplex problémákat elegáns kóddal és modern vizuális megoldásokkal megoldani.
         </p>
-        <ul class="project-features">
-          <li data-hu="<strong>Koncepció:</strong> Kiváltja a papíralapú adminisztrációt BYOD modellben, drága beépített GPS modulok nélkül."
-              data-en="<strong>Concept:</strong> Replaces paper-based administration using a cost-effective BYOD approach.">
-            <strong>Koncepció:</strong> Kiváltja a papíralapú adminisztrációt BYOD modellben, drága beépített GPS modulok nélkül.
-          </li>
-          <li data-hu="<strong>Biztonság:</strong> Lokális HTTP hálózati kommunikáció, garantálva az érzékeny céges adatok belső hálózaton maradását."
-              data-en="<strong>Security:</strong> Communicates via local network (HTTP), keeping sensitive corporate data strictly internal.">
-            <strong>Biztonság:</strong> Lokális HTTP hálózati kommunikáció, garantálva az érzékeny céges adatok belső hálózaton maradását.
-          </li>
-          <li data-hu="<strong>Technológia & Integráció:</strong> Natív Java Android környezet, Room Database adatperzisztencia, OpenStreetMap API prediktív címbevitel."
-              data-en="<strong>Technology:</strong> Native Java Android apps, Room Database local storage, and OpenStreetMap API for predictive routing.">
-            <strong>Technológia & Integráció:</strong> Natív Java Android környezet, Room Database adatperzisztencia, OpenStreetMap API prediktív címbevitel.
-          </li>
+      </div>
+
+      <!-- Készségek -->
+      <div class="glass-panel" style="padding: 25px; margin-top: 20px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px;" data-hu="KÉSZSÉGEK" data-en="SKILLS">KÉSZSÉGEK</h3>
+        <ul style="font-family: 'Poppins', sans-serif; font-size: 0.95em; line-height: 1.8; margin-left: 20px;">
+          <li data-hu="Csapatmunka" data-en="Teamwork">Csapatmunka</li>
+          <li data-hu="Problémamegoldás" data-en="Problem-solving">Problémamegoldás</li>
+          <li data-hu="PC építés" data-en="PC building">PC építés</li>
+          <li>Java, Flutter, Dart</li>
+          <li>HTML, C, C++, C#</li>
+          <li>Microsoft Office</li>
         </ul>
       </div>
-    </section>
-
-    <!-- Elismerések -->
-    <section class="glass-card section-card">
-      <h3 class="section-title"><i class="fa-solid fa-award"></i> <span data-hu="Díjak & Minősítések" data-en="Awards & Honors">Díjak & Minősítések</span></h3>
-      <div class="award-card">
-        <div class="award-icon"><i class="fa-solid fa-certificate"></i></div>
-        <div>
-          <h4>Accenture Academy Diploma</h4>
-          <p>Accenture • 2026.05.07</p>
-        </div>
+      
+      <!-- Nyelvek -->
+      <div class="glass-panel" style="padding: 25px; margin-top: 20px; margin-bottom: 40px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px;" data-hu="NYELVISMERET" data-en="LANGUAGE SKILLS">NYELVISMERET</h3>
+        <ul style="font-family: 'Poppins', sans-serif; font-size: 0.95em; line-height: 1.8; margin-left: 20px;">
+          <li data-hu="Magyar (Anyanyelv)" data-en="Hungarian (Native)">Magyar (Anyanyelv)</li>
+          <li data-hu="Román" data-en="Romanian">Román</li>
+          <li data-hu="Angol" data-en="English">Angol</li>
+          <li data-hu="Német" data-en="German">Német</li>
+        </ul>
       </div>
-    </section>
 
-    <!-- Lábléc -->
-    <footer class="footer">
-      <p>© 2026 Sándor Hunor. Modern Glassmorphism Portfolio.</p>
-    </footer>
+    </div>
+
+    <!-- Jobb Oszlop: Projektek, Tanulmányok, Díjak -->
+    <div class="grid_16">
+      
+      <!-- Projektek -->
+      <div class="glass-panel" style="padding: 25px; margin-top: 20px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px;" data-hu="PROJEKTEK" data-en="PROJECTS">PROJEKTEK</h3>
+        
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1em; margin-bottom: 5px;" data-hu="DriveCheck (Kliens-Szerver Flottamenedzsment)" data-en="DriveCheck (Client-Server Fleet Management)">DriveCheck (Kliens-Szerver Flottamenedzsment)</h4>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 0.95em; line-height: 1.6; margin-bottom: 10px;" data-hu="Szoftveralapú fuvar- és járműpark-kezelő rendszer kkv-k számára. Két önálló natív Android alkalmazásból áll: Kliens (sofőr) és Szerver (adminisztrátor)." data-en="A software-based fleet and trip management solution for SMEs. It consists of two independent Android apps: a Client (driver) and a Server (administrator).">
+          Szoftveralapú fuvar- és járműpark-kezelő rendszer kkv-k számára. Két önálló natív Android alkalmazásból áll: Kliens (sofőr) és Szerver (adminisztrátor).
+        </p>
+        <ul style="font-family: 'Poppins', sans-serif; font-size: 0.9em; line-height: 1.6; margin-left: 20px; color: #cbd5e1;">
+          <li style="margin-bottom: 5px;" data-hu="<strong>Koncepció:</strong> Kiváltja a papíralapú adminisztrációt BYOD modellben, drága GPS hardverek nélkül." data-en="<strong>Key Concept:</strong> Replaces paper-based administration with a digital BYOD approach, avoiding expensive GPS hardware."><strong>Koncepció:</strong> Kiváltja a papíralapú adminisztrációt BYOD modellben, drága GPS hardverek nélkül.</li>
+          <li style="margin-bottom: 5px;" data-hu="<strong>Biztonság:</strong> Lokális HTTP hálózati kommunikáció az adatok belső védelméért." data-en="<strong>Security:</strong> Communicating via a local network (HTTP), sensitive data remains within the company."><strong>Biztonság:</strong> Lokális HTTP hálózati kommunikáció az adatok belső védelméért.</li>
+          <li data-hu="<strong>Technológia:</strong> Natív Java Android alkalmazások, Room Database (lokális tárhely), RecyclerView és OpenStreetMap API." data-en="<strong>Technology:</strong> Native Java-based Android applications using Room Database and RecyclerView."><strong>Technológia:</strong> Natív Java Android alkalmazások, Room Database (lokális tárhely), RecyclerView és OpenStreetMap API.</li>
+        </ul>
+      </div>
+
+      <!-- Tanulmányok -->
+      <div class="glass-panel" style="padding: 25px; margin-top: 20px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px;" data-hu="TANULMÁNYOK" data-en="EDUCATION AND TRAINING">TANULMÁNYOK</h3>
+        
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1em; margin-bottom: 5px;" data-hu="Informatika (Magyar nyelven)" data-en="Informatics (in Hungarian)">Informatika (Magyar nyelven)</h4>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 0.95em; line-height: 1.6;">George Emil Palade University of Medicine, Pharmacy, Science and Technology | Târgu Mureș<br>
+        <em style="color: #94a3b8;">2024 - <span data-hu="Jelenleg" data-en="Present">Jelenleg</span></em></p>
+        
+        <br>
+        
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1em; margin-bottom: 5px;" data-hu="Társadalomtudományok (Intenzív német)" data-en="Social sciences (intensive German)">Társadalomtudományok (Intenzív német)</h4>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 0.95em; line-height: 1.6;">Bolyai Farkas High School | Târgu Mureș<br>
+        <em style="color: #94a3b8;">2020 - 2024</em></p>
+      </div>
+
+      <!-- Díjak -->
+      <div class="glass-panel" style="padding: 25px; margin-top: 20px; margin-bottom: 40px;">
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 600; color: #38bdf8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px;" data-hu="DÍJAK" data-en="AWARDS">DÍJAK</h3>
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1.1em; margin-bottom: 5px;">Accenture Academy Diploma</h4>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 0.95em; color: #94a3b8;">Accenture | <em>07/05/2026</em></p>
+      </div>
+
+    </div>
+    <div class="clear"></div>
   </div>
 
   <script src="js/main.js"></script>
