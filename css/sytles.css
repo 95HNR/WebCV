@@ -548,7 +548,6 @@ label {
 }
 
 
-
 :root {
   /* Sötét téma (alapértelmezett) */
   --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311042 100%);
@@ -562,7 +561,7 @@ label {
   --accent: #38bdf8;
 }
 
-[data-theme="light"] {
+html[data-theme="light"] {
   /* Világos téma */
   --bg-gradient: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #fce7f3 100%);
   --blob-1: rgba(168, 85, 247, 0.25);
@@ -585,12 +584,22 @@ body {
   z-index: 0;
 }
 
-p, li {
+/* Felülírjuk az eredeti szövegszíneket, hogy alkalmazkodjon a sötét/világos témához */
+h1, h2, h3, h4, p, li, .item_tittle h1, .item_tittle h2, #name_tittle h1 {
   color: var(--text-main) !important;
   transition: color 0.4s ease;
 }
 
-strong {
+a {
+  color: var(--accent) !important;
+  transition: color 0.3s ease;
+}
+
+/* Az eredeti szalagok (ribbon) modernizálása */
+.ribbon2 {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border) !important;
+  backdrop-filter: blur(10px) !important;
   color: var(--accent) !important;
 }
 
@@ -613,14 +622,14 @@ strong {
   100% { transform: translate(-40px, 80px) scale(0.95); }
 }
 
-/* Üveghatású kártya dizájn */
+/* Üveghatású kártya dizájn (Ezt adtuk hozzá a HTML-ben a dobozokhoz) */
 .glass-panel {
   background: var(--glass-bg) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
   border: 1px solid var(--glass-border) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease !important;
   position: relative;
   overflow: hidden;
@@ -661,4 +670,4 @@ strong {
   border-color: var(--accent);
   color: var(--accent);
   transform: scale(1.05);
-}	
+}
