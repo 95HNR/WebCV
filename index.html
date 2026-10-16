@@ -29,152 +29,124 @@
 <script src="js/scroll-startstop.events.jquery.js" type="text/javascript"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Lobster|PT+Sans+Narrow:400,700|PT+Sans:400,700' rel='stylesheet' type='text/css' />
+<!-- FontAwesome a modern ikonokhoz -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <script language="javascript" src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
 <script language="javascript" src="js/jquery.tips.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
   
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ESL9YWEHQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8ESL9YWEHQ');
 </script>
   
 <script type="text/javascript">
 $("document").ready(function (){ 
-
-    var percent = $('.progress_bar').attr('title');
-    $('.progress_bar').animate({width: percent},1000);
-    
-    var percent = $('.html').attr('title');
-    $('.html').animate({width: percent},1000);
-    
-    var percent = $('.php').attr('title');
-    $('.php').animate({width: percent},1000);
-    
-    var percent = $('.css').attr('title');
-    $('.css').animate({width: percent},1000);
-    
-    var percent = $('.flash').attr('title');
-    $('.flash').animate({width: percent},1000);
-    
-    var percent = $('.java').attr('title');
-    $('.java').animate({width: percent},1000);
-    
-    var percent = $('.cms').attr('title');
-    $('.cms').animate({width: percent},1000);
-    
-    var percent = $('.seo').attr('title');
-    $('.seo').animate({width: percent},1000);
-    
-    //activate tooltip
+    var percent = $('.progress_bar').attr('title'); $('.progress_bar').animate({width: percent},1000);
+    var percent = $('.html').attr('title'); $('.html').animate({width: percent},1000);
+    var percent = $('.php').attr('title'); $('.php').animate({width: percent},1000);
+    var percent = $('.css').attr('title'); $('.css').animate({width: percent},1000);
+    var percent = $('.flash').attr('title'); $('.flash').animate({width: percent},1000);
+    var percent = $('.java').attr('title'); $('.java').animate({width: percent},1000);
+    var percent = $('.cms').attr('title'); $('.cms').animate({width: percent},1000);
+    var percent = $('.seo').attr('title'); $('.seo').animate({width: percent},1000);
     $('.tip').tipsy({gravity: 's',fade: true});
-
-
 });
 </script >
 
-    <script type="text/javascript">
-    $(function() {
-        $('#gallery a').lightBox();
-    });
-    </script>
+<script type="text/javascript">
+$(function() { $('#gallery a').lightBox(); });
+</script>
 	
 <script type='text/javascript'>
 $(document).ready(function(){
 $("#gallery img").fadeTo("fast", 0.8);
-$("#gallery img").hover(function(){
-$(this).fadeTo("fast", 1.0);
-},function(){
-$(this).fadeTo("fast", 0.8);
-});
+$("#gallery img").hover(function(){ $(this).fadeTo("fast", 1.0); },function(){ $(this).fadeTo("fast", 0.8); });
 });
 </script>
 			
-		<script type="text/javascript">
-			$(function() {
-				var $elem = $('.container_24');
-				
-				$('#nav_up').fadeIn('slow');
-				$('#nav_down').fadeIn('slow');  
-				
-				$(window).bind('scrollstart', function(){
-					$('#nav_up,#nav_down').stop().animate({'opacity':'0.2'});
-				});
-				$(window).bind('scrollstop', function(){
-					$('#nav_up,#nav_down').stop().animate({'opacity':'1'});
-				});
-				
-				$('#nav_down').click(
-					function (e) {
-						$('html, body').animate({scrollTop: $elem.height()}, 800);
-					}
-				);
-				$('#nav_up').click(
-					function (e) {
-						$('html, body').animate({scrollTop: '0px'}, 800);
-					}
-				);
-            });
-        </script>
+<script type="text/javascript">
+$(function() {
+    var $elem = $('.container_24');
+    $('#nav_up').fadeIn('slow'); $('#nav_down').fadeIn('slow');  
+    $(window).bind('scrollstart', function(){ $('#nav_up,#nav_down').stop().animate({'opacity':'0.2'}); });
+    $(window).bind('scrollstop', function(){ $('#nav_up,#nav_down').stop().animate({'opacity':'1'}); });
+    $('#nav_down').click( function (e) { $('html, body').animate({scrollTop: $elem.height()}, 800); } );
+    $('#nav_up').click( function (e) { $('html, body').animate({scrollTop: '0px'}, 800); } );
+});
+</script>
 
 </head>
 <body>
 
+    <!-- Animált háttérelemek az üveghatáshoz -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- UI Vezérlő Gombok -->
+    <div class="ui-controls">
+        <div class="lang-switcher">
+            <button class="ui-btn lang-btn active" data-set-lang="hu">HU</button>
+            <button class="ui-btn lang-btn" data-set-lang="en">EN</button>
+            <button class="ui-btn lang-btn" data-set-lang="ro">RO</button>
+        </div>
+        <button id="theme-btn" class="ui-btn theme-btn"><i class="fa-solid fa-moon"></i></button>
+    </div>
 
     <div id="header"><!-- Header -->
-	
 	<ul class="social_panel">
-				<li><a href="https://github.com/95HNR" title="GitHub Profile" class="blue-darker"><img src="img/facebook.png" width="24" height="24" alt="GitHub Profile"/></a></li>
-				<li><a href="mailto:sandorhunor842@gmail.com" title="Email" class="blue"><img src="img/twitter.png" width="24" height="24" alt="Email"/></a></li>
-            </ul> 
+        <li><a href="https://github.com/95HNR" title="GitHub Profile" class="blue-darker"><i class="fa-brands fa-github fa-2x" style="color:white; margin-top:5px;"></i></a></li>
+        <li><a href="mailto:sandorhunor842@gmail.com" title="Email" class="blue"><i class="fa-solid fa-envelope fa-2x" style="color:white; margin-top:5px;"></i></a></li>
+    </ul> 
     </div><!-- End Header -->
 <div class="container_24">
 
 <div class="grid_1"><div class="holder"></div></div>
 <!-- TITTLE -->
      <div class="grid_9"><!-- Tittle -->
-         <div id="name_tittle">
-          <h1>Sándor Hunor</h1>
-          <ul>
-          <li>IT/Computer Science student</li>
-		  <li></li>
-          </ul>
-	</div>
+         <!-- Üveghatás Wrapper hozzáadva -->
+         <div class="glass-box header-glass">
+             <div id="name_tittle">
+              <h1>Sándor Hunor</h1>
+              <ul>
+              <li class="tr" data-hu="Informatika szakos egyetemi hallgató" data-en="IT/Computer Science student" data-ro="Student la Informatică / Calculatoare">IT/Computer Science student</li>
+              </ul>
+            </div>
+        </div>
 </div>
-
 
 <div class="grid_3"><div class="holder"></div></div>
 <div class="grid_1"><div class="holder"></div></div>
 <div class="icon_list">
    
-       
-         
 <!-- CONTACT LIST -->
     <div class="grid_7">
-        <div class="work_list">
+        <!-- Üveghatás Wrapper hozzáadva -->
+        <div class="glass-box contact-glass">
+            <div class="work_list">
+             <h1 class="tr" data-hu="KAPCSOLAT" data-en="CONTACT INFO" data-ro="INFORMAȚII CONTACT">CONTACT INFO</h1>
 
-		<h1>CONTACT INFO :</h1>
-         <h3></h3>
-
-         <h2>GitHub</h2>
-         <ul><li><a target="_blank" title="GitHub Profile" href="https://github.com/95HNR">github.com/95HNR</a></li></ul>
-         
-         <h2>Email</h2>
-         <ul>
-			<li>
-				<a target="_blank" title="Email" href="mailto:sandorhunor842@gmail.com">sandorhunor842@gmail.com</a>
-			</li>
-		 </ul>
-         <h2>Phone & Location</h2>
-         <ul><li>
-				(+40) 0753342672<br/>Târgu Mureș, Romania
-			</li>
-		</ul>
-         
+             <h2>GitHub</h2>
+             <ul><li><a target="_blank" title="GitHub Profile" href="https://github.com/95HNR">github.com/95HNR</a></li></ul>
+             
+             <h2>Email</h2>
+             <ul><li><a target="_blank" title="Email" href="mailto:sandorhunor842@gmail.com">sandorhunor842@gmail.com</a></li></ul>
+             
+             <h2 class="tr" data-hu="Telefon & Helyszín" data-en="Phone & Location" data-ro="Telefon & Locație">Phone & Location</h2>
+             <ul><li>(+40) 0753342672<br/>Târgu Mureș, Romania</li></ul>
+             
+             <h2 class="tr" data-hu="Önéletrajz letöltése" data-en="Download CV" data-ro="Descărcare CV">Download CV</h2>
+             <ul class="cv-downloads">
+                <li><a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> Magyar CV</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> English CV</a></li>
+                <li><a href="#" target="_blank"><i class="fa-solid fa-file-pdf"></i> CV Română</a></li>
+             </ul>
+            </div>
         </div>
     </div>
 <div class="grid_1"><div class="holder"></div></div>
@@ -187,133 +159,111 @@ $(this).fadeTo("fast", 0.8);
 
 <!--PERSONAL STATMENT -->
 <div class="grid_10">
-    <div class="ribbon2">About Me</div>
-         <img class="floatLeft" src="img/resume.png" alt="Sándor Hunor" />
-		 <div class="item">
-         <p>
-		My name is Hunor Sándor, a 21-year-old enthusiast with a strong passion for programming, photography, design, and gaming. I am a creative and detail-oriented individual who enjoys solving problems, learning new technologies, and bringing ideas to life through code and visuals. I'm looking to grow professionally in a dynamic and innovative environment.
-		 </p>
-		</div><!--AVATAR -->
- 
-  <div class="grid_10"><br><br></div>  
-  
-    <div class="ribbon2">Education</div>
-	<div class="item_tittle">
-		<h1><a target="_blank" title="George Emil Palade University" href="#">George Emil Palade University</a><span>2024 - Present</span></h1>
-		<h2>Informatics (in Hungarian) | Târgu Mureș, Romania</h2>
-		<div class="item"><p> George Emil Palade University of Medicine, Pharmacy, Science and Technology</p></div>
-	</div>
-
-	<div class="item_tittle">
-		<h1><a target="_blank" title="Bolyai Farkas High School" href="#">Bolyai Farkas High School</a><span>2020 - 2024</span></h1>
-		<h2>Social sciences (intensive German) | Târgu Mureș, Romania</h2>
-		<div class="item"><p> High School Diploma </p></div>
-	</div>
-
-
-      <div class="grid_10">
-		<div class="ribbon2">Language Skills</div><div class="why_me">
-		         
-		  <ul>
-			  <li><b>Hungarian</b></li>
-			  <li><b>Romanian</b></li>
-			  <li><b>German</b></li>
-			  <li><b>English</b></li>
-		  </ul>
+    <!-- Üveghatás Wrapper a bal oszlopnak -->
+    <div class="glass-box content-glass">
+        <div class="ribbon2 tr" data-hu="Rólam" data-en="About Me" data-ro="Despre Mine">About Me</div>
+             <img class="floatLeft" src="img/resume.png" alt="Sándor Hunor" style="border-radius: 10px;" />
+             <div class="item">
+             <p class="tr" data-hu="Sándor Hunor vagyok, 21 éves technológia-rajongó, aki élénken érdeklődik a programozás, a fotózás, a dizájn és a gaming iránt. Kreatív és részletorientált emberként szeretek problémákat megoldani, új technológiákat tanulni, és ötleteket megvalósítani kódokon és vizualizációkon keresztül. Dinamikus és innovatív környezetben szeretnék szakmailag fejlődni." data-en="My name is Hunor Sándor, a 21-year-old enthusiast with a strong passion for programming, photography, design, and gaming. I am a creative and detail-oriented individual who enjoys solving problems, learning new technologies, and bringing ideas to life through code and visuals. I'm looking to grow professionally in a dynamic and innovative environment." data-ro="Mă numesc Sándor Hunor, am 21 de ani și sunt pasionat de programare, fotografie, design și gaming. Sunt o persoană creativă și atentă la detalii, căreia îi place să rezolve probleme, să învețe tehnologii noi și să dea viață ideilor prin cod și elemente vizuale. Îmi doresc să mă dezvolt profesional într-un mediu dinamic și inovator.">
+            My name is Hunor Sándor, a 21-year-old enthusiast with a strong passion for programming, photography, design, and gaming. I am a creative and detail-oriented individual who enjoys solving problems, learning new technologies, and bringing ideas to life through code and visuals. I'm looking to grow professionally in a dynamic and innovative environment.
+             </p>
+            </div>
+     
+      <div class="grid_10"><br><br></div>  
+      
+        <div class="ribbon2 tr" data-hu="Tanulmányok" data-en="Education" data-ro="Educație">Education</div>
+        <div class="item_tittle">
+            <h1><a target="_blank" title="George Emil Palade University" href="#">George Emil Palade University</a><span>2024 - Present</span></h1>
+            <h2 class="tr" data-hu="Informatika (magyar nyelven) | Târgu Mureș, Romania" data-en="Informatics (in Hungarian) | Târgu Mureș, Romania" data-ro="Informatică (în limba maghiară) | Târgu Mureș, Romania">Informatics (in Hungarian) | Târgu Mureș, Romania</h2>
+            <div class="item"><p> George Emil Palade University of Medicine, Pharmacy, Science and Technology</p></div>
         </div>
-	  </div>
-         
-		 <div class="grid_10">
-		<div class="ribbon2">Interests</div><div class="why_me">
 
-			 <ul>
-				 <li>Programming & Software Development</li>
-				 <li>Photography & Design</li>
-				 <li>Gaming & PC Building</li>
-				 
-			 </ul>
-		 </div>
-		</div>
+        <div class="item_tittle">
+            <h1><a target="_blank" title="Bolyai Farkas High School" href="#">Bolyai Farkas High School</a><span>2020 - 2024</span></h1>
+            <h2 class="tr" data-hu="Társadalomtudományok (intenzív német) | Târgu Mureș, Romania" data-en="Social sciences (intensive German) | Târgu Mureș, Romania" data-ro="Științe sociale (germană intensiv) | Târgu Mureș, Romania">Social sciences (intensive German) | Târgu Mureș, Romania</h2>
+            <div class="item"><p> High School Diploma </p></div>
+        </div>
 
-		 
+          <div class="grid_10">
+            <div class="ribbon2 tr" data-hu="Nyelvismeret" data-en="Language Skills" data-ro="Limbi Cunoscute">Language Skills</div><div class="why_me">
+              <ul>
+                  <li><b class="tr" data-hu="Magyar (Anyanyelv)" data-en="Hungarian (Native)" data-ro="Maghiară (Maternă)">Hungarian</b></li>
+                  <li><b class="tr" data-hu="Román" data-en="Romanian" data-ro="Română">Romanian</b></li>
+                  <li><b class="tr" data-hu="Német" data-en="German" data-ro="Germană">German</b></li>
+                  <li><b class="tr" data-hu="Angol" data-en="English" data-ro="Engleză">English</b></li>
+              </ul>
+            </div>
+          </div>
+             
+          <div class="grid_10">
+            <div class="ribbon2 tr" data-hu="Érdeklődés" data-en="Interests" data-ro="Pasiuni">Interests</div><div class="why_me">
+                 <ul>
+                     <li class="tr" data-hu="Szoftverfejlesztés & Programozás" data-en="Programming & Software Development" data-ro="Programare & Dezvoltare Software">Programming & Software Development</li>
+                     <li class="tr" data-hu="Fotózás & Dizájn" data-en="Photography & Design" data-ro="Fotografie & Design">Photography & Design</li>
+                     <li class="tr" data-hu="Gaming & PC Építés" data-en="Gaming & PC Building" data-ro="Gaming & Asamblare PC">Gaming & PC Building</li>
+                 </ul>
+             </div>
+          </div>
+    </div> <!-- End glass-box left -->
 </div>
 <div class="grid_2"><div class="vertical_line"></div></div>
 
-
 <div class="grid_10"><!--RIGHT -->
-    <div class="ribbon2">Skills</div>
-	 <div id="technical_skill">
-          <div id="skill_list2"><ul>
-		    <li>Teamwork</li>
-			<li>Problem-solving</li>
-			<li>PC building</li>
-			<li>Java</li>
-			<li>Flutter, Dart</li>
-			<li>HTML</li>
-			<li>C, C++, C#</li>
-			<li>MS Office</li>
-      
-		 </ul></div>
-		<div id="skill_set"><!--PROGRESS BAR-->
-             <ul>
-             
-			  <li><div class="progress_container">
-             <div class="cms tip" title="90%"></div>
-             </div></li>
-			 
-			  <li><div class="progress_container">
-             <div class="seo tip" title="90%"></div>
-             </div></li>
-			 
-			 <li><div class="progress_container">
-             <div class="php tip" title="85%"></div>
-             </div></li>
-			 
-			 <li><div class="progress_container">
-             <div class="html tip" title="80%"></div>
-             </div></li>
+    <!-- Üveghatás Wrapper a jobb oszlopnak -->
+    <div class="glass-box content-glass">
+        <div class="ribbon2 tr" data-hu="Készségek" data-en="Skills" data-ro="Abilități">Skills</div>
+         <div id="technical_skill">
+              <div id="skill_list2"><ul>
+                <li class="tr" data-hu="Csapatmunka" data-en="Teamwork" data-ro="Muncă în echipă">Teamwork</li>
+                <li class="tr" data-hu="Problémamegoldás" data-en="Problem-solving" data-ro="Rezolvarea problemelor">Problem-solving</li>
+                <li class="tr" data-hu="PC építés" data-en="PC building" data-ro="Asamblare PC">PC building</li>
+                <li>Java</li>
+                <li>Flutter, Dart</li>
+                <li>HTML</li>
+                <li>C, C++, C#</li>
+                <li>MS Office</li>
+             </ul></div>
+            <div id="skill_set"><!--PROGRESS BAR-->
+                 <ul>
+                  <li><div class="progress_container"><div class="cms tip" title="90%"></div></div></li>
+                  <li><div class="progress_container"><div class="seo tip" title="90%"></div></div></li>
+                  <li><div class="progress_container"><div class="php tip" title="85%"></div></div></li>
+                  <li><div class="progress_container"><div class="html tip" title="80%"></div></div></li>
+                  <li><div class="progress_container"><div class="css tip" title="80%"></div></div></li>
+                 <li><div class="progress_container"><div class="progress_bar tip" title="75%"></div></div></li>
+                 <li><div class="progress_container"><div class="flash tip" title="70%"></div></div></li>
+                 <li><div class="progress_container"><div class="java tip" title="95%"></div></div></li>
+                 </ul>
+                </div>
+                </div>
 
-			 <li><div class="progress_container">
-             <div class="css tip" title="80%"></div>
-             </div></li>
+        <div class="ribbon2 tr" data-hu="Projektek" data-en="Projects" data-ro="Proiecte">Projects</div>
 
-             <li><div class="progress_container">
-             <div class="progress_bar tip" title="75%"></div>
-             </div></li>
+        <div class="item_tittle"> 
+          <h1><a target="_blank" title="DriveCheck" href="#">DriveCheck</a> </h1>
+          <h2 class="tr" data-hu="Kliens-Szerver Flottamenedzsment" data-en="Client-Server Fleet Management" data-ro="Management de flotă Client-Server">Client-Server Fleet Management</h2></div>
+         <div class="item"><p class="tr" data-hu="A DriveCheck rendszer egy szoftveralapú flotta- és fuvarozáskezelő megoldás kis- és középvállalkozások számára. Két független Android alkalmazásból áll: egy Kliensből (sofőr) és egy Szerverből (adminisztrátor)." data-en="The DriveCheck system is a software-based fleet and trip management solution for small and medium-sized enterprises. It consists of two independent Android apps: a Client (driver) and a Server (administrator)." data-ro="Sistemul DriveCheck este o soluție software de gestionare a flotei și a curselor pentru întreprinderile mici și mijlocii. Acesta constă în două aplicații Android independente: un Client (șofer) și un Server (administrator).">The DriveCheck system is a software-based fleet and trip management solution for small and medium-sized enterprises. It consists of two independent Android apps: a Client (driver) and a Server (administrator).</p></div>
+        
+         <div class="item">
+            <p>
+            <b class="tr" data-hu="Koncepció:" data-en="Key Concept:" data-ro="Concept Cheie:">Key Concept:</b> <span class="tr" data-hu="Kiváltja a papíralapú adminisztrációt egy digitális, költséghatékony 'Bring Your Own Device' megközelítéssel, elkerülve a drága GPS hardvereket." data-en="It replaces paper-based administration with a digital, cost-effective 'Bring Your Own Device' approach, avoiding the need for expensive GPS hardware." data-ro="Înlocuiește administrarea pe hârtie cu o abordare digitală și eficientă din punct de vedere al costurilor 'Bring Your Own Device', evitând necesitatea unor echipamente GPS scumpe.">It replaces paper-based administration with a digital, cost-effective "Bring Your Own Device" approach, avoiding the need for expensive GPS hardware.</span><br/><br/>
+            
+            <b class="tr" data-hu="Biztonság:" data-en="Security:" data-ro="Securitate:">Security:</b> <span class="tr" data-hu="A helyi hálózaton (HTTP) történő kommunikációnak köszönhetően az érzékeny adatok a cég belső környezetében maradnak." data-en="By communicating via a local network (HTTP), sensitive data remains within the company's internal environment." data-ro="Prin comunicarea prin intermediul unei rețele locale (HTTP), datele sensibile rămân în mediul intern al companiei.">By communicating via a local network (HTTP), sensitive data remains within the company's internal environment.</span><br/><br/>
+            
+            <b class="tr" data-hu="Kliens App:" data-en="Client App:" data-ro="Aplicația Client:">Client App:</b> <span class="tr" data-hu="A gyors adatbevitelre fókuszál, és az OpenStreetMap API-t használja a pontos, prediktív címbevitelhez a hibák minimalizálása érdekében." data-en="It focuses on quick data entry and uses the OpenStreetMap API for accurate, predictive address input to minimize errors." data-ro="Se concentrează pe introducerea rapidă a datelor și utilizează OpenStreetMap API pentru introducerea precisă și predictivă a adreselor pentru a minimiza erorile.">It focuses on quick data entry and uses the OpenStreetMap API for accurate, predictive address input to minimize errors.</span><br/><br/>
+            
+            <b class="tr" data-hu="Szerver App:" data-en="Server App:" data-ro="Aplicația Server:">Server App:</b> <span class="tr" data-hu="Központi csomópontként működik a járműpark kezelésére, valamint a fuvarigények automatizált munkafolyamaton keresztüli jóváhagyására vagy elutasítására." data-en="It acts as a central hub for managing the vehicle fleet and approving or rejecting trip requests through an automated workflow." data-ro="Acționează ca un hub central pentru gestionarea flotei de vehicule și aprobarea sau respingerea cererilor de curse printr-un flux de lucru automatizat.">It acts as a central hub for managing the vehicle fleet and approving or rejecting trip requests through an automated workflow.</span><br/><br/>
+            
+            <b class="tr" data-hu="Technológia:" data-en="Technology:" data-ro="Tehnologie:">Technology:</b> <span class="tr" data-hu="Mindkét alkalmazás natív Java-alapú Android alkalmazás, amelyek Room Database-t használnak a megbízható helyi tároláshoz és RecyclerView-t a hatékony adatmegjelenítéshez." data-en="Both apps are native Java-based Android applications using Room Database for reliable local storage and RecyclerView for efficient data display." data-ro="Ambele aplicații sunt aplicații Android native bazate pe Java, utilizând Room Database pentru stocare locală fiabilă și RecyclerView pentru afișarea eficientă a datelor.">Both apps are native Java-based Android applications using Room Database for reliable local storage and RecyclerView for efficient data display.</span>
+            </p>
+         </div>
 
-			 <li><div class="progress_container">
-             <div class="flash tip" title="70%"></div>
-             </div></li>
+        <div class="ribbon2 tr" style="margin-top: 30px;" data-hu="Díjak" data-en="Awards" data-ro="Premii">Awards</div>
 
-			 <li><div class="progress_container">
-             <div class="java tip" title="95%"></div>
-             </div></li>
-			 	    
-			 </ul>
-            </div>
-			</div>
-
-    <div class="ribbon2">Projects</div>
-
-	<div class="item_tittle"> 
-      <h1><a target="_blank" title="DriveCheck" href="#">DriveCheck</a> </h1>
-      <h2>Client-Server Fleet Management</h2></div>
-     <div class="item"><p>The DriveCheck system is a software-based fleet and trip management solution for small and medium-sized enterprises. It consists of two independent Android apps: a Client (driver) and a Server (administrator).</p></div>
-	
-	 <div class="item">
-		<p><b>Key Concept:</b> It replaces paper-based administration with a digital, cost-effective "Bring Your Own Device" approach, avoiding the need for expensive GPS hardware.<br/><br/>
-		<b>Security:</b> By communicating via a local network (HTTP), sensitive data remains within the company's internal environment.<br/><br/>
-		<b>Client App:</b> It focuses on quick data entry and uses the OpenStreetMap API for accurate, predictive address input to minimize errors.<br/><br/>
-		<b>Server App:</b> It acts as a central hub for managing the vehicle fleet and approving or rejecting trip requests through an automated workflow.<br/><br/>
-		<b>Technology:</b> Both apps are native Java-based Android applications using Room Database for reliable local storage and RecyclerView for efficient data display.</p>
-	 </div>
-
-    <div class="ribbon2" style="margin-top: 30px;">Awards</div>
-
-	<div class="item_tittle"> 
-      <h1>Accenture <span>07/05/2026</span></h1>
-      <h2>Accenture Academy Diploma</h2></div>
-
+        <div class="item_tittle"> 
+          <h1>Accenture <span>07/05/2026</span></h1>
+          <h2>Accenture Academy Diploma</h2></div>
+    </div> <!-- End glass-box right -->
 </div>
 
 
@@ -329,6 +279,8 @@ $(this).fadeTo("fast", 0.8);
 
 <div style="display:none;" class="nav_up" id="nav_up"></div>
 <div style="display:none;" class="nav_down" id="nav_down"></div>
-</body>
 
+<!-- A funkcionalitást és stílusokat a js és css fájlokban fogjuk kezelni, hogy a HTML tiszta maradjon -->
+<script src="js/main.js"></script>
+</body>
 </html>
