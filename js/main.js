@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const htmlRoot = document.documentElement;
   
-  
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
   
@@ -11,12 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
   updateThemeIcon(currentTheme);
 
   // Gombnyomásra váltunk és mentünk
-  themeToggle.addEventListener('click', () => {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    htmlRoot.setAttribute('data-theme', currentTheme);
-    localStorage.setItem('sh_cv_theme', currentTheme);
-    updateThemeIcon(currentTheme);
-  });
+  if(themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        htmlRoot.setAttribute('data-theme', currentTheme);
+        localStorage.setItem('sh_cv_theme', currentTheme);
+        updateThemeIcon(currentTheme);
+      });
+  }
 
   // Ikon cseréje (Nap / Hold)
   function updateThemeIcon(theme) {
@@ -25,22 +26,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  
   const langToggle = document.getElementById('lang-toggle');
+  const langText = document.getElementById('lang-text');
   
   // Lekérjük a mentett nyelvet, alapértelmezett a 'hu'
   let currentLang = localStorage.getItem('sh_cv_lang') || 'hu';
   applyLang(currentLang);
 
   // Gombnyomásra nyelvet cserélünk és mentünk
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'hu' ? 'en' : 'hu';
-    localStorage.setItem('sh_cv_lang', currentLang);
-    applyLang(currentLang);
-  });
+  if(langToggle) {
+      langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'hu' ? 'en' : 'hu';
+        localStorage.setItem('sh_cv_lang', currentLang);
+        applyLang(currentLang);
+      });
+  }
 
   // Lecseréljük a szövegeket a kiválasztott nyelvre
   function applyLang(lang) {
+      if(langText) {
+          langText.textContent = lang === 'hu' ? 'EN' : 'HU';
+      }
     // Megkeressük az összes elemet, aminek van 'data-hu' attribútuma
     const elements = document.querySelectorAll('[data-hu]');
     elements.forEach(el => {
