@@ -4,7 +4,7 @@
   --blob-1: rgba(139, 92, 246, 0.35);
   --blob-2: rgba(59, 130, 246, 0.3);
   --blob-3: rgba(236, 72, 153, 0.25);
-  
+
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.12);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -22,7 +22,7 @@
   --blob-1: rgba(168, 85, 247, 0.25);
   --blob-2: rgba(96, 165, 250, 0.25);
   --blob-3: rgba(244, 114, 182, 0.2);
-  
+
   --glass-bg: rgba(255, 255, 255, 0.65);
   --glass-border: rgba(255, 255, 255, 0.7);
   --glass-shadow: 0 8px 32px 0 rgba(100, 116, 139, 0.15);
@@ -61,6 +61,7 @@ body {
   pointer-events: none;
   animation: float 20s infinite alternate ease-in-out;
 }
+
 .blob-1 {
   width: 450px;
   height: 450px;
@@ -68,6 +69,7 @@ body {
   top: -100px;
   left: -100px;
 }
+
 .blob-2 {
   width: 500px;
   height: 500px;
@@ -76,6 +78,7 @@ body {
   right: -100px;
   animation-duration: 25s;
 }
+
 .blob-3 {
   width: 350px;
   height: 350px;
@@ -86,9 +89,17 @@ body {
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 40px) scale(1.1); }
-  100% { transform: translate(-40px, 80px) scale(0.95); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(60px, 40px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-40px, 80px) scale(0.95);
+  }
 }
 
 .container {
@@ -124,18 +135,22 @@ body {
   align-items: center;
   padding: 1rem 2rem;
 }
+
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
 }
+
 .logo span {
   color: var(--accent);
 }
+
 .controls {
   display: flex;
   gap: 0.8rem;
 }
+
 .glass-btn {
   background: var(--chip-bg);
   border: 1px solid var(--glass-border);
@@ -149,6 +164,7 @@ body {
   gap: 0.5rem;
   backdrop-filter: blur(8px);
 }
+
 .glass-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
@@ -162,6 +178,7 @@ body {
   gap: 2.5rem;
   flex-wrap: wrap;
 }
+
 .avatar-ring {
   width: 150px;
   height: 150px;
@@ -173,6 +190,7 @@ body {
   justify-content: center;
   flex-shrink: 0;
 }
+
 .profile-img {
   width: 100%;
   height: 100%;
@@ -180,32 +198,38 @@ body {
   object-fit: cover;
   background: #1e293b;
 }
+
 .hero-info {
   flex: 1;
   min-width: 280px;
 }
+
 .hero-info .name {
   font-size: 2.3rem;
   font-weight: 700;
   line-height: 1.2;
 }
+
 .hero-info .title {
   color: var(--accent);
   font-size: 1.15rem;
   font-weight: 500;
   margin: 0.3rem 0 1rem;
 }
+
 .hero-info .about-text {
   color: var(--text-muted);
   line-height: 1.6;
   font-size: 0.95rem;
   margin-bottom: 1.2rem;
 }
+
 .contact-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
+
 .chip {
   background: var(--chip-bg);
   border: 1px solid var(--glass-border);
@@ -218,6 +242,7 @@ body {
   align-items: center;
   gap: 0.5rem;
 }
+
 .chip:hover {
   border-color: var(--accent);
   color: var(--accent);
@@ -229,10 +254,26 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 1.8rem;
 }
+
 @media (max-width: 768px) {
-  .grid-layout { grid-template-columns: 1fr; }
-  .profile-wrapper { justify-content: center; text-align: center; }
-  .contact-chips { justify-content: center; }
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-wrapper {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-chips {
+    justify-content: center;
+  }
+
+  .floating-captcha {
+    display: none;
+  }
+
+  /* Kisebb képernyőn rejtve */
 }
 
 .section-title {
@@ -254,9 +295,11 @@ body {
   padding-left: 1.2rem;
   margin-left: 0.5rem;
 }
+
 .timeline-item {
   position: relative;
 }
+
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -268,16 +311,19 @@ body {
   background: var(--accent);
   box-shadow: 0 0 10px var(--accent);
 }
+
 .timeline-date {
   font-size: 0.8rem;
   color: var(--accent);
   font-weight: 600;
   text-transform: uppercase;
 }
+
 .timeline-item h4 {
   font-size: 1rem;
   margin: 0.2rem 0;
 }
+
 .timeline-sub {
   font-size: 0.85rem;
   color: var(--text-muted);
@@ -291,11 +337,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
 .tags-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
 .tag {
   background: var(--chip-bg);
   border: 1px solid var(--glass-border);
@@ -304,6 +352,7 @@ body {
   font-size: 0.85rem;
   font-weight: 500;
 }
+
 .tag:hover {
   background: var(--accent);
   color: #fff;
@@ -316,12 +365,14 @@ body {
   flex-direction: column;
   gap: 0.8rem;
 }
+
 .lang-label {
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
   margin-bottom: 0.3rem;
 }
+
 .bar-bg {
   width: 100%;
   height: 6px;
@@ -329,6 +380,7 @@ body {
   border-radius: 3px;
   overflow: hidden;
 }
+
 .bar-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--accent), #a855f7);
@@ -342,23 +394,28 @@ body {
   padding: 1.4rem;
   border-radius: 16px;
 }
+
 .project-header {
   margin-bottom: 0.8rem;
 }
+
 .project-header h4 {
   font-size: 1.2rem;
 }
+
 .project-badge {
   font-size: 0.8rem;
   color: var(--accent);
   font-weight: 500;
 }
+
 .project-desc {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
+
 .project-features {
   padding-left: 1.2rem;
   font-size: 0.9rem;
@@ -377,16 +434,128 @@ body {
   border-radius: 14px;
   border: 1px solid var(--glass-border);
 }
+
 .award-icon {
   font-size: 1.8rem;
   color: #eab308;
 }
+
 .award-card h4 {
   font-size: 1.05rem;
 }
+
 .award-card p {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+/* --- Kapcsolatfelvételi űrlap & CAPTCHA stílusok --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--chip-bg);
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.captcha-row input {
+  width: 100px;
+}
+
+.submit-btn {
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.form-feedback {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.form-feedback.success {
+  color: #4ade80;
+}
+
+.form-feedback.error {
+  color: #f87171;
+}
+
+/* Lebegő CAPTCHA jelölő a bal alsó sarokban */
+.floating-captcha {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  pointer-events: none;
+  box-shadow: var(--glass-shadow);
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .footer {
